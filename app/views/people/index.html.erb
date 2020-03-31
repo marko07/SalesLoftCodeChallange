@@ -1,0 +1,19 @@
+<h1> This is the list of available People </h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Job title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <th scope="row"> <%= person["display_name"] %> </th>
+        <td> <%= person["email_address"] %></td>
+        <td> <%= person["title"] %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
