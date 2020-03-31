@@ -15,8 +15,13 @@ describe "People" do
 
   it 'display the list of available People', js: true do
     visit people_path
-    expect(page).to have_content "This is the list of available People"
     expect_first_person_of_list
+  end
+
+  it 'display last person available', js: true do
+    visit people_path
+    find_by_id("DataTables_Table_0_last").click
+    expect_last_person_of_list
   end
 
   private
@@ -25,5 +30,11 @@ describe "People" do
     expect(page).to have_content "Steven Pease"
     expect(page).to have_content "sakatius@gmail.com"
     expect(page).to have_content "Software Engineer"
+  end
+
+  def expect_last_person_of_list
+    expect(page).to have_content "Camryn Quigley"
+    expect(page).to have_content "llewellyn_witting@klocko.biz"
+    expect(page).to have_content "Legacy Quality Technician"
   end
 end

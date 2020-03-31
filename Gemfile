@@ -27,6 +27,9 @@ gem 'dotenv-rails'
 
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'ajax-datatables-rails'
+gem 'jquery-datatables'
+gem 'kaminari'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
