@@ -15,6 +15,12 @@ describe SalesLoft::Gateway do
     expect(people["data"].last).to include(person_from_second_page_api)
   end
 
+  it 'returns all People in a single list' do
+    people = gateway.get_all_people
+    expect(people[:data].first).to include(person_from_api)
+    expect(people[:data].last).to include(last_person)
+  end
+
   def person_from_api
     {
       "first_name" => "Steven",
@@ -30,6 +36,15 @@ describe SalesLoft::Gateway do
       "last_name" => "Jacobs",
       "display_name" =>"Garret Jacobs",
       "email_address" => "laurel_bode@white.com",
+    }
+  end
+
+  def last_person
+    {
+      "first_name" => "Orlando",
+      "last_name" => "Stanton",
+      "display_name" => "Orlando Stanton",
+      "email_address" => "katrina_langosh@kozey.io",
     }
   end
 end

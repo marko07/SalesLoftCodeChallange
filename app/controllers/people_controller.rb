@@ -1,7 +1,8 @@
 class PeopleController < ApplicationController
   def index
-    gateway = SalesLoft::Gateway.new
-    raw_people = gateway.get_people
-    @people = raw_people["data"]
+    respond_to do |format|
+      format.html
+      format.json { render json: PeopleDatatable.new(view_context) }
+    end
   end
 end
