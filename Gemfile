@@ -41,6 +41,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry-rails'
   gem 'launchy'
+  gem 'capybara-selenium'
 end
 
 group :development do
