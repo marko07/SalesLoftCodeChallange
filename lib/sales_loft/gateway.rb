@@ -6,7 +6,7 @@ class SalesLoft::Gateway
     )
   end
 
-  def get_people
-    @api.get_people
+  def get_people(page: 1)
+    @api.get_people(page)
   end
 end
