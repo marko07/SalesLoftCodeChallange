@@ -4,8 +4,8 @@ class SalesLoft::Api < SalesLoft::JsonApi
     @key = key
   end
 
-  def get_people
-    get "/people.json"
+  def get_people(page)
+    get "/people.json?page=#{page}"
   end
 
   private 
