@@ -6,8 +6,8 @@ class SalesLoft::Gateway
     )
   end
 
-  def get_people(page: 1)
-    @api.get_people(page)
+  def get_people(page: 1, per_page: 25)
+    @api.get_people(page, per_page)
   end
 
   def get_all_people
@@ -16,13 +16,13 @@ class SalesLoft::Gateway
       data: []
     }
 
-    people = @api.get_people(page = 1)
+    people = @api.get_people(page = 1, 100)
     all_available_people[:data] << people["data"]
     all_available_people[:total] =+ people["data"].size
 
     next_page = people["metadata"]["paging"]["next_page"]
     while !next_page.nil? do
-      people = @api.get_people(page = next_page)
+      people = @api.get_people(page = next_page, 100)
       all_available_people[:data] << people["data"]
       all_available_people[:total] += people["data"].size
       next_page = people["metadata"]["paging"]["next_page"]
