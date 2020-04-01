@@ -3,5 +3,8 @@ Rails.application.routes.draw do
     get :duplicated_users
   end
 
+  get :notes, controller: "notes", action: :index
+  get :marco, controller: "about", action: :index
+
   root 'people#index'
 end

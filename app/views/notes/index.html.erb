@@ -1,0 +1,24 @@
+<h1>Some particulary notes about the process</h1>
+
+<p>
+As part of the extra information I can give you about the process,
+there are things related to code decisions, some improvements or other
+things that may result relevant:
+</p>
+
+<dl class="row">
+  <dt class="col-sm-3">Assumptions</dt>
+  <dd class="col-sm-9">The data will not change and it’s for testing, probably analyze the use of cassettes for API.</dd>
+  <dt class="col-sm-3 text-truncate">Improvements</dt>
+  <dd class="col-sm-9">Install pronto y rubocop (gems to validate best practices and clean code).</dd>
+  <dt class="col-sm-3 text-truncate">Improvements</dt>
+  <dd class="col-sm-9">There is a security issue on bootstrap and it’s recomended to be updated.</dd>
+  <dt class="col-sm-3 text-truncate">Improvements</dt>
+  <dd class="col-sm-9">Using similar_text to compare emails, maybe it’s better to implement our own comparison service, tho.</dd>
+  <dt class="col-sm-3 text-truncate">Improvements</dt>
+  <dd class="col-sm-9">Extracting the partials of models into a separate folder.</dd>
+  <dt class="col-sm-3 text-truncate">Improvements</dt>
+  <dd class="col-sm-9">In the tests, don’t use sleep and implement a wait_for or increase the wait time for capybara.</dd>
+  <dt class="col-sm-3 text-truncate">Improvements</dt>
+  <dd class="col-sm-9">Add a spin on the button for the time waiting for duplicates, so the user can now that the request is still happening.</dd>  
+</dl>
