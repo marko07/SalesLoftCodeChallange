@@ -31,6 +31,8 @@ gem 'ajax-datatables-rails'
 gem 'jquery-datatables'
 gem 'kaminari'
 
+gem 'similar_text'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
