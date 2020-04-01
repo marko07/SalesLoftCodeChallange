@@ -17,8 +17,8 @@ describe SalesLoft::Gateway do
 
   it 'returns all People in a single list' do
     people = gateway.get_all_people
-    expect(people[:data].first).to include(person_from_api)
-    expect(people[:data].last).to include(last_person)
+    expect(people["data"].first).to include(person_from_api)
+    expect(people["data"].last).to include(last_person)
   end
 
   def person_from_api
