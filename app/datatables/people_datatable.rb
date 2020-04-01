@@ -10,7 +10,9 @@ class PeopleDatatable < ApplicationDatatable
       columns << person["display_name"]
       columns << email
       columns << person["title"]
-      columns << button_char_email_count(email, person["id"])
+      columns << new_button(email, person["id"], "btn-char-count", "Count")
+      columns <<
+        new_button(email, person["id"], "btn-user-duplicates", "Duplicates")
       rows << columns
     end
     rows
@@ -26,8 +28,8 @@ class PeopleDatatable < ApplicationDatatable
     @people = raw_people["data"]
   end
 
-  def button_char_email_count(email, user_id)
-    "<button type='button' class='btn btn-primary btn-char-count'" \
-      "data-user-id=#{user_id}, data-user-email=#{email}>Count</button>"
+  def new_button(email, user_id, button_class, title)
+    "<button type='button' class='btn btn-primary #{button_class}'" \
+      "data-user-id=#{user_id}, data-user-email=#{email}>#{title}</button>"
   end
 end

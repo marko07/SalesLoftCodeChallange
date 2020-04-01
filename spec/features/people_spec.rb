@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "People" do
+describe "People", :js do
   let(:cvent_gateway) do
     OnsiteCheckin::CventOnsiteGateway.new(cvent_credentials)
   end
@@ -13,22 +13,27 @@ describe "People" do
     }
   end
 
-  it 'display the list of available People', js: true do
+  it 'display the list of available People' do
     visit people_path
     expect_first_person_of_list
   end
 
-  it 'display last person available', js: true do
+  it 'display last person available' do
     visit people_path
     find_by_id("DataTables_Table_0_last").click
     expect_last_person_of_list
   end
 
-  it 'displays the modal for char counts', :js do
+  it 'displays the modal for char counts' do
     visit people_path
     click_on("Count", match: :first)
     expect(page).to have_content "Email unique char count"
     expect(page).to have_content "a	3"
+  end
+
+  it 'displays the button to request duplicate users' do
+    visit people_path
+    expect(page).to have_button "Duplicates"
   end
 
   private
