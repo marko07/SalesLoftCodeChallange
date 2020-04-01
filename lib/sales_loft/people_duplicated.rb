@@ -1,3 +1,5 @@
+require 'similar_text'
+
 class SalesLoft::PeopleDuplicated
   def initialize(id, email)
     @id = id

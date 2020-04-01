@@ -31,9 +31,12 @@ describe "People", :js do
     expect(page).to have_content "a	3"
   end
 
-  it 'displays the button to request duplicate users' do
+  it 'displays duplicated users' do
     visit people_path
-    expect(page).to have_button "Duplicates"
+    click_on("Duplicates", match: :first)
+    sleep(3)
+    expect(page).to have_content "These are the possible duplicated users."
+    expect(page).to have_content "Possibly Duplicate	sakatiuss@gmail.com"
   end
 
   private
