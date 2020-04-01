@@ -24,6 +24,13 @@ describe "People" do
     expect_last_person_of_list
   end
 
+  it 'displays the modal for char counts', :js do
+    visit people_path
+    click_on("Count", match: :first)
+    expect(page).to have_content "Email unique char count"
+    expect(page).to have_content "a	3"
+  end
+
   private
 
   def expect_first_person_of_list
